@@ -1,32 +1,11 @@
-# Student Robotics Website
+# Student Robotics Website Reverse Proxy
 
 [![Build status][build-badge]][build-page]
 
-The Student Robotics public website.
+The reverse proxy which pulls together all the pieces of the Student Robotics
+public website.
 
 ## Getting Started
-
-1. [Install Ruby][install-ruby]
-
-2. Install Bundler (1.x) and Rake
-
-    ```
-    $ gem install 'bundler:~>1' rake
-    ```
-
-3. Install [Node Package Manager (npm)][install-npm]
-
-4. Start the app in development mode
-
-    ```shell
-    $ rake dev
-    ```
-
-### To work on the reverse proxy
-
-Right now the Student Robotics website is also acting as the main reverse proxy
-for studentrobotics.org. If you are changing the nginx config, you should test
-the reverse proxy is working before you commit. To do this, do the following:
 
 1. [Install Docker][docker]
 
@@ -70,11 +49,9 @@ feature branch, and [raise a pull request][raise-a-pr].
 The `master` branch of repo is built into a Docker image by [Circle CI][circle-ci]
 which is then deployed manually into a Kubernetes hosted on Google Cloud.
 
-[build-badge]: https://circleci.com/gh/srobo/website/tree/master.png?style=shield
-[build-page]: https://circleci.com/gh/srobo/website/tree/master
+[build-badge]: https://circleci.com/gh/srobo/reverse-proxy/tree/master.png?style=shield
+[build-page]: https://circleci.com/gh/srobo/reverse-proxy/tree/master
 [docker]: https://docker.com/
-[install-ruby]: https://www.ruby-lang.org/en/documentation/installation/
-[install-npm]: https://nodejs.org/en/download/
-[raise-a-pr]: https://github.com/srobo/website/pull/new/gh-pages
-[circle-ci]: https://circleci.com/gh/srobo/website
+[raise-a-pr]: https://github.com/srobo/reverse-proxy/pull/new
+[circle-ci]: https://circleci.com/gh/srobo/reverse-proxy
 [deployment-readme]: _env/README.md

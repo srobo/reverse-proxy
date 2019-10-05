@@ -1,4 +1,4 @@
-# Deploying the Website
+# Deploying the Proxy
 
 This assumes you've got access to a kubernetes cluster. We have [a guide][guide]
 on how we do this at Student Robotics.
