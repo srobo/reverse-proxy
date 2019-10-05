@@ -28,11 +28,11 @@ public website.
    edited it), and confirm that you see a copy of the SR website (also check that
    you didn't get redirect to the real one!)
 
-6. Make your changes to the [`nginx.conf`](_env/nginx.conf)
+6. Make your changes to the [`nginx.conf`](nginx.conf)
 
 7. Get those changes into the container and reload nginx:
     ``` shell
-    $ docker cp _env/nginx.conf srobo:/etc/nginx/nginx.conf && docker kill -s HUP srobo
+    $ docker cp nginx.conf srobo:/etc/nginx/nginx.conf && docker kill -s HUP srobo
     ```
 
 8. Refresh your browser and bask in the glory of your changes
@@ -44,7 +44,7 @@ feature branch, and [raise a pull request][raise-a-pr].
 
 ## Deployment
 
-***Note**: full deployment instructions have their [own README][deployment-readme]*
+***Note**: full [deployment instructions](./DEPLOYMENT.md) are separate.*
 
 The `master` branch of repo is built into a Docker image by [Circle CI][circle-ci]
 which is then deployed manually into a Kubernetes hosted on Google Cloud.
@@ -54,4 +54,3 @@ which is then deployed manually into a Kubernetes hosted on Google Cloud.
 [docker]: https://docker.com/
 [raise-a-pr]: https://github.com/srobo/reverse-proxy/pull/new
 [circle-ci]: https://circleci.com/gh/srobo/reverse-proxy
-[deployment-readme]: _env/README.md
