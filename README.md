@@ -47,7 +47,7 @@ feature branch, and [raise a pull request][raise-a-pr].
 ***Note**: full [deployment instructions](./DEPLOYMENT.md) are separate.*
 
 The `master` branch of repo is built into a Docker image by [Circle CI][circle-ci]
-which is then deployed manually into a Kubernetes hosted on Google Cloud.
+which is then deployed manually into a Kubernetes hosted on DigitalOcean.
 
 [build-badge]: https://circleci.com/gh/srobo/reverse-proxy/tree/master.png?style=shield
 [build-page]: https://circleci.com/gh/srobo/reverse-proxy/tree/master
