@@ -2,19 +2,19 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: website
+  name: reverse-proxy
 spec:
   selector:
     matchLabels:
-      run: website
+      run: reverse-proxy
   replicas: 1
   template:
     metadata:
       labels:
-        run: website
+        run: reverse-proxy
     spec:
       containers:
-        - name: website
-          image: srobo/website
+        - name: reverse-proxy
+          image: srobo/reverse-proxy
           ports:
             - containerPort: 80
