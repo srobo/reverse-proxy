@@ -2,9 +2,9 @@
 apiVersion: v1
 kind: Service
 metadata:
-  name: website
+  name: reverse-proxy
   labels:
-    run: website
+    run: reverse-proxy
 spec:
   type: NodePort
   ports:
@@ -13,4 +13,4 @@ spec:
       targetPort: 80
       protocol: TCP
   selector:
-    run: website
+    run: reverse-proxy

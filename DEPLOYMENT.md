@@ -7,9 +7,9 @@ on how we do this at Student Robotics.
 
 ### DigitalOcean
 
-To host the official website, we use DigitalOcean. To access the kubernetes cluster,
-you need to have access to our DigitalOcean account. To setup your `kubectl` for the
-following steps, you need to do the following:
+To host the official reverse-proxy, we use DigitalOcean. To access the
+kubernetes cluster, you need to have access to our DigitalOcean account. To
+setup your `kubectl` for the following steps, you need to do the following:
 
 1. Log into DigitalOcean, and into the StudentRobotics project.
 
@@ -52,7 +52,7 @@ Because we don't do any sophisticated tagging, we have to force Kubernetes to
 pull the latest version of the app. We do this by doing the following:
 
 ```bash
-kubectl patch deployment website \
+kubectl patch deployment reverse-proxy \
     -p "{\"spec\":{\"template\":{\"metadata\":{\"labels\":{\"date\":\"`date +'%s'`\"}}}}}"
 ```
 
