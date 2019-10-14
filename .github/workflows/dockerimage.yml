@@ -3,19 +3,19 @@ name: Docker Image CI
 on: [push]
 
 jobs:
-
   build:
- 
     runs-on: ubuntu-latest
  
     steps:
     - uses: actions/checkout@v1
-    - name: Build the Docker image
-      run: docker build . --file Dockerfile --tag {owner}/{repo}:latest
 
-    - name: Build & Push to GitHub Package
-      uses: opspresso/action-docker@master
+    - name: Build the Docker image
+      run: docker build . --file Dockerfile --tag {owner}/{repo}/{repo}
+
+    - name: Log into the Github Docker Registry
+      run: echo ${GITHUB_TOKEN} | docker login -u ${GITHUB_ACTOR} --password-stdin docker.pkg.github.com
       env:
-        REGISTRY: "docker.pkg.github.com"
-        TAG_NAME: "latest"
-        LATEST: "true"
+        GITHUB_TOKEN: ${{ secrets.GITHUB_REGISTRY_TOKEN }}
+
+    - name: Push the Docker image
+      run: docker push docker.pkg.github.com/{owner}/{repo}/{repo}
