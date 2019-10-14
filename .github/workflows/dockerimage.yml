@@ -10,7 +10,7 @@ jobs:
     - uses: actions/checkout@v1
 
     - name: Build the Docker image
-      run: docker build --tag ${GITHUB_REPOSITORY}/reverse-proxy .
+      run: docker build --tag docker.pkg.github.com/${GITHUB_REPOSITORY}/reverse-proxy .
 
     - name: Log into the Github Docker Registry
       run: echo ${GITHUB_TOKEN} | docker login -u ${GITHUB_ACTOR} --password-stdin docker.pkg.github.com
