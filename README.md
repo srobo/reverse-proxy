@@ -14,15 +14,19 @@ public website.
     $ docker pull nginx
     ```
 
-3. Optionally change the bound ports so they don't conflict with your local host's
-   configuration. For example, you might want to edit the [`Rakefile`](Rakefile)
-   to remove `-p 80:80`.
-
-4. Start the container
-
+3. Build the image:
     ``` shell
-    $ rake run
+    $ docker build --tag srobo/reverse-proxy .
     ```
+
+4. Start the container:
+    ``` shell
+    $ docker run --rm -p 80:80 --name srobo srobo/reverse-proxy
+    ```
+
+   Note: You can change the bound ports so they don't conflict with your local
+   host's configuration. For example, you might want to replace `-p 80:80` with
+   ` -p 8080:80`.
 
 5. Visit <http://localhost> in a browser (adjust the port as needed if you
    edited it), and confirm that you see a copy of the SR website (also check that
