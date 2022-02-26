@@ -2,8 +2,9 @@
 
 [![Build status][build-badge]][build-page]
 
-The reverse proxy which pulls together all the pieces of the Student Robotics
-public website.
+An attempt to separate out the reverse proxy from the website repo.
+This ended up never being used, having been supplanted by the `srobo-nginx`
+role within <https://github.com/srobo/ansible/>.
 
 ## Getting Started
 
